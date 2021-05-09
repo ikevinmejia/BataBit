@@ -155,22 +155,21 @@ main {
 
 /*   ----------- Tablas  ----------- */
 
-.main-currency-table {
-    width: 70%;
-    min-width: 235px;
-    max-width: 500px;
-    height: 360px;
-    margin: 0 auto;
-    font-family: "Inter", sans-serif;
+.main-tables-container {
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
 }
 
-.main-commission-table {
+.main-currency-table, .main-commission-table   {
     width: 70%;
     min-width: 235px;
     max-width: 500px;
     height: 360px;
-    margin: 0 auto;
+    margin: 20px 5px 0;
     font-family: "Inter", sans-serif;
+    scroll-snap-align: center;
 }
 
 .main-currency-table .currency-table--title {
@@ -189,7 +188,7 @@ color: var(--bitcoin-orange);
     color: var(--secondary-blue);
 }
 
-.currency-table--container {
+.currency-table--container, .commission-table--container {
     width: 90%;
     min-width: 230px;
     max-width: 300px;
@@ -197,40 +196,19 @@ color: var(--bitcoin-orange);
     margin: 0 auto;
 }
 
-.commission-table--container {
-    width: 90%;
-    min-width: 230px;
-    max-width: 300px;
-    height: 250px;
-    margin: 0 auto;
-}
-
-.currency-table--container table {
+.currency-table--container table, .commission-table--container table {
     width: 100%;
     height: 100%;
 }
 
-.commission-table--container table {
-    width: 100%;
-    height: 100%;
-}
-
-.currency-table--container td {
+.currency-table--container td, .commission-table--container td {
     width: 50%;
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 1.9rem;
     color: var(--grey);
     background-color: var(--just-white);
-}
-
-.commission-table--container td {
-    width: 50%;
-    font-size: 1.6rem;
-    font-weight: 500;
-    line-height: 1.9rem;
-    color: var(--grey);
-    background-color: var(--just-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.16);
 }
 
 .currency-table--container .table__top-left {
@@ -265,14 +243,7 @@ color: var(--bitcoin-orange);
     border-radius: 0 0 15px 0;
 }
 
-.currency-table--container .table__right {
-    font-size: 1.4rem;
-    font-weight: normal;
-    line-height: 1.7rem;
-    color: #757575
-}
-
-.commission-table--container .table__right {
+.currency-table--container .table__right, .commission-table--container .table__right {
     font-size: 1.4rem;
     font-weight: normal;
     line-height: 1.7rem;
@@ -301,7 +272,7 @@ color: var(--bitcoin-orange);
     background-repeat: no-repeat;
 }
 
-.currency-table--date {
+.currency-table--date, .commission-table--date {
     width: 190px;
     height: 30px;
     margin: 0 auto;
@@ -312,23 +283,10 @@ color: var(--bitcoin-orange);
 }
 
 .commission-table--date {
-    width: 190px;
-    height: 30px;
-    margin: 0 auto;
-    margin-top: 15px;
-    padding: 8px;
     background-color: var(--soft-blue);
-    border-radius: 8px;
 }
 
-.currency-table--date p {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
-    font-weight: 300;
-    color: var(--warm-black);
-}
-
-.commission-table--date p {
+.currency-table--date p, .commission-table--date p {
     font-size: 1.2rem;
     line-height: 1.5rem;
     font-weight: 300;
